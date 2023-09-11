@@ -24,9 +24,6 @@ class AwsCdkLambdaSqsStack(Stack):
             self, 'StoryTable',
             partition_key=ddb.Attribute(
                 name='id', type=ddb.AttributeType.STRING),
-            attributes=[
-                ddb.Attribute(name='content', type=ddb.AttributeType.STRING)
-            ],
             removal_policy=RemovalPolicy.DESTROY  # Remove table when stack is deleted
         )
 
